@@ -1,0 +1,54 @@
+<html>
+<head><title>Dream Theatre></title></head>
+<body>
+  <div><h1>Dream Theatre</h1></div>
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <div id="dreams-list"></div>
+      </div>
+      <div class="span6">
+        <div id="dream-form" class="form">
+          <div class="form-field">
+            <label for="dream-blurb">Divulge your dream</label>
+            <textarea id="dream-blurb"></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="dream-trope">This Dream's Theme</label>
+            <input type="text" id="dream-trope"></input>
+          </div>
+
+          <button id="submit-dream">Send it off</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+  $(function () {
+    var dreamsListEl = $('#dreams-list');
+    var dreamsView = new DD.DreamIndexView(dreamsListEl, function(dream) {
+      console.log(dream);
+    });
+
+    var dreamBlurbEl = $('#dream-blurb');
+    var submitDreamBtn = $('#submit-dream');
+
+    var dreamFormView = new DD.DreamFormView(
+      dreamBlurbEl,
+      submitDreamBtn,
+      function (newDream) {
+        if(newDream.existing = true) {
+          newDream.update();
+        } else {
+          newDream.save();
+        }
+      }
+    ).bind();
+
+    DD.Dream.refresh();
+  });
+</script>
+</html>

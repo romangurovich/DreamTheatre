@@ -1,0 +1,79 @@
+@import 'bootstrap';
+
+body {
+  background: url(dream-background.jpg);
+}
+
+.container {
+  margin-top: 100px;
+  margin-left: 20px;
+//  width: 400px;
+}
+
+#dreams-list {
+  width: 200px;
+  margin-left: 30px;
+  background: #DBDBDB;
+  opacity:0.6;
+  border-radius: 40px;
+  padding: 30px 160px 30px 20px;
+  box-shadow: 0px 0px 20px #fff;
+}
+
+#dream-form {
+  textarea {
+    resize: none;
+    height: 200px;
+    width: 60%;
+    &:hover {
+      box-shadow: 0px 0px 20px #fff;
+    }
+  }
+
+  input {
+    &:hover {
+      box-shadow: 0px 0px 20px #fff;
+    }
+  }
+  button {
+    border-radius: 10px;
+    margin-top: 10px;
+    opacity:0.4;
+    transition: all .5s ease;
+    background: #72BA7A;
+    &:hover {
+      background: #F2DA41;
+      box-shadow: 0px 0px 20px #fff;
+      opacity: 0.7;
+    };
+  }
+}
+
+
+
+h1 {
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #C2D2D9;
+}
+
+button.close {
+  color: red;
+  float: left;
+  margin-right: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+label {
+  color: #C2D2D9;
+}
+
+.dream-item {
+  &:hover {
+    background: white;
+    box-shadow: 0px 0px 20px #fff;
+  }
+}
