@@ -25,4 +25,13 @@ class DreamsController < ApplicationController
       format.json { render :json => @dream }
     end
   end
+
+  def destroy
+    @dream = Dream.find(params[:id])
+    @dream.destroy
+
+    respond_to do |format|
+      format.json { render :json => @dream }
+    end
+  end
 end

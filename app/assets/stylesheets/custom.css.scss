@@ -72,7 +72,10 @@ label {
 }
 
 .dream-item {
+  color: black;
+  text-decoration: none;
   &:hover {
+    text-decoration: none;
     background: white;
     box-shadow: 0px 0px 20px #fff;
   }

@@ -29,9 +29,6 @@
 <script type="text/javascript">
   $(function () {
     var dreamsListEl = $('#dreams-list');
-    var dreamsView = new DD.DreamIndexView(dreamsListEl, function(dream) {
-      console.log(dream);
-    });
 
     var dreamBlurbEl = $('#dream-blurb');
     var submitDreamBtn = $('#submit-dream');
@@ -40,13 +37,17 @@
       dreamBlurbEl,
       submitDreamBtn,
       function (newDream) {
-        if(newDream.existing = true) {
-          newDream.update();
-        } else {
-          newDream.save();
-        }
+        newDream.save();
       }
-    ).bind();
+    );
+
+    dreamFormView.bind();
+
+    var dreamsView = new DD.DreamIndexView(dreamsListEl, function(dream) {
+      console.log(dream);
+      $("#dream-blurb").text(dream.blurb);
+      dreamFormView.dream_id = dream.id;
+    });
 
     DD.Dream.refresh();
   });
